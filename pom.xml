@@ -15,7 +15,10 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    
+    <plugin>
+ 	 <artifactId>maven-war-plugin</artifactId>
+ 	 <version>3.0.0</version>
+	</plugin>
     <dependency>
  		<groupId>javax.servlet</groupId> 
  		<artifactId>servlet-api</artifactId> 
