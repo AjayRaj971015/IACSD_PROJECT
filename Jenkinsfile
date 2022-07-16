@@ -21,7 +21,17 @@ pipeline{
  		      }
 
 				             }
-			
+		
+		stage {
+		steps {
+			sh 'rm owasp* || true'
+			sh 'wget "https://raw.githubusercontent.com/AjayRaj971015/IACSD_PROJECT/master/DC.sh"'
+			sh 'chmod +x DC.sh'
+			sh './DC.sh'
+	
+			}
+ 			}
+		
 		stage ('build') {
 			steps {
 			 	sh 'mvn clean package'
