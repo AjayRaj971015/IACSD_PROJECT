@@ -22,7 +22,7 @@ pipeline{
 
 				             }
 		
-		stage {
+		stage ('Dependency Check') {
 		steps {
 			sh 'rm owasp* || true'
 			sh 'wget "https://raw.githubusercontent.com/AjayRaj971015/IACSD_PROJECT/master/DC.sh"'
