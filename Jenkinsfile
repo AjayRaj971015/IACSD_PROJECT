@@ -42,7 +42,7 @@ pipeline{
 		  steps {
 		  //sshagent(['192.168.80.101'])
 			sh'cd $WORKSPACE'
-			sh'scp /var/lib/jenkins/workspace/testing_pro/target/WebApp.war root@192.168.80.101:/opt/tomcat/apache-tomcat-9.0.64/webapps/webapp.war'
+			sh'sshpass -p "ajay123" scp -o StrictHostkeyChecking=no target/WebApp.war root@192.168.80.101:/opt/tomcat/apache-tomcat-9.0.64/webapps/webapp.war'
 			  
 			}
 
