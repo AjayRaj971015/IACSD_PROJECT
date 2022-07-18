@@ -4,7 +4,7 @@ pipeline{
 		maven 'Maven'
 	     }
 	stages{
-		stage (Initialize) {
+		stage ('Initialize') {
 		steps {
 			sh '''
 				echo "PATH = ${PATH}"
@@ -40,9 +40,10 @@ pipeline{
 			        }
 		stage ('deploy-to-tomcat') {
 		  steps {
+		  sshagent(['192.168.80.101']){
 			sh 'cd $WORKSPACE'
 			sh'scp target/*.war root@192.168.80.101:/opt/tomcat/apache-tomcat-9.0.64/webapps/webapp.war'
-			
+			  }
 			}
 
 		} 
